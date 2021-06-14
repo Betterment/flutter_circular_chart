@@ -50,7 +50,7 @@ class AnimatedCircularChart extends StatefulWidget {
   /// will be grouped together as concentric circles.
   ///
   /// If [chartType] is [CircularChartType.Pie] then length cannot be > 1.
-  final List<CircularStackEntry>? initialChartData;
+  final List<CircularStackEntry> initialChartData;
 
   /// The type of chart to be rendered.
   /// Use [CircularChartType.Pie] for a circle divided into slices for each entry.
@@ -162,13 +162,13 @@ class AnimatedCircularChartState extends State<AnimatedCircularChart>
       vsync: this,
     );
 
-    _assignRanks(widget.initialChartData!);
+    _assignRanks(widget.initialChartData);
 
     _tween = new CircularChartTween(
       new CircularChart.empty(chartType: widget.chartType),
       new CircularChart.fromData(
         size: widget.size,
-        data: widget.initialChartData!,
+        data: widget.initialChartData,
         chartType: widget.chartType,
         stackRanks: _stackRanks,
         entryRanks: _entryRanks,

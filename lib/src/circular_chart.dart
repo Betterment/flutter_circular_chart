@@ -42,7 +42,7 @@ class CircularChart {
     List<CircularChartStack> stacks = new List<CircularChartStack>.generate(
       data.length,
       (i) => new CircularChartStack.fromData(
-        stackRanks![data[i].rankKey] ?? i,
+        stackRanks?[data[i].rankKey] ?? i,
         data[i].entries,
         entryRanks,
         percentageValues,

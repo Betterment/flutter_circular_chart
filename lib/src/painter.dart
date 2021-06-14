@@ -63,16 +63,16 @@ void _paintChart(Canvas canvas, Size size, CircularChart chart) {
 
   for (final CircularChartStack stack in chart.stacks) {
     for (final segment in stack.segments) {
-      segmentPaint.color = segment.color!;
-      segmentPaint.strokeWidth = segment.strokeWidth ?? stack.width!;
+      segmentPaint.color = segment.color;
+      segmentPaint.strokeWidth = segment.strokeWidth ?? stack.width;
 
       canvas.drawArc(
         new Rect.fromCircle(
           center: new Offset(size.width / 2, size.height / 2),
-          radius: stack.radius!,
+          radius: stack.radius,
         ),
-        stack.startAngle! * _kRadiansPerDegree,
-        segment.sweepAngle! * _kRadiansPerDegree,
+        stack.startAngle * _kRadiansPerDegree,
+        segment.sweepAngle * _kRadiansPerDegree,
         chart.chartType == CircularChartType.Pie,
         segmentPaint,
       );

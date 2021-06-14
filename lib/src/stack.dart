@@ -17,9 +17,9 @@ class CircularChartStack implements MergeTweenable<CircularChartStack> {
   );
 
   final int rank;
-  final double? radius;
-  final double? width;
-  final double? startAngle;
+  final double radius;
+  final double width;
+  final double startAngle;
   final List<CircularChartSegment> segments;
 
   factory CircularChartStack.fromData(
@@ -44,7 +44,7 @@ class CircularChartStack implements MergeTweenable<CircularChartStack> {
       double sweepAngle =
           (entries[i].value / valueSum * _kMaxAngle) + previousSweepAngle;
       previousSweepAngle = sweepAngle;
-      int rank = entryRanks![entries[i].rankKey] ?? i;
+      int rank = entryRanks?[entries[i].rankKey] ?? i;
       return CircularChartSegment(
         rank,
         sweepAngle,
@@ -87,9 +87,9 @@ class CircularChartStackTween extends Tween<CircularChartStack> {
   @override
   CircularChartStack lerp(double t) => new CircularChartStack(
         begin!.rank,
-        lerpDouble(begin!.radius, end!.radius, t),
-        lerpDouble(begin!.width, end!.width, t),
-        lerpDouble(begin!.startAngle, end!.startAngle, t),
+        lerpDouble(begin!.radius, end!.radius, t) ?? 0.0,
+        lerpDouble(begin!.width, end!.width, t) ?? 0.0,
+        lerpDouble(begin!.startAngle, end!.startAngle, t) ?? 0.0,
         _circularSegmentsTween.lerp(t),
       );
 }
