@@ -11,10 +11,10 @@ final List<List<CircularStackEntry>> _quarterlyProfitPieData = [
   <CircularStackEntry>[
     new CircularStackEntry(
       <CircularSegmentEntry>[
-        new CircularSegmentEntry(500.0, Colors.red[200], rankKey: 'Q1'),
-        new CircularSegmentEntry(1000.0, Colors.green[200], rankKey: 'Q2'),
-        new CircularSegmentEntry(2000.0, Colors.blue[200], rankKey: 'Q3'),
-        new CircularSegmentEntry(1000.0, Colors.yellow[200], rankKey: 'Q4'),
+        new CircularSegmentEntry(500.0, Colors.red[200]!, rankKey: 'Q1'),
+        new CircularSegmentEntry(1000.0, Colors.green[200]!, rankKey: 'Q2'),
+        new CircularSegmentEntry(2000.0, Colors.blue[200]!, rankKey: 'Q3'),
+        new CircularSegmentEntry(1000.0, Colors.yellow[200]!, rankKey: 'Q4'),
       ],
       rankKey: 'Quarterly Profits',
     ),
@@ -22,10 +22,10 @@ final List<List<CircularStackEntry>> _quarterlyProfitPieData = [
   <CircularStackEntry>[
     new CircularStackEntry(
       <CircularSegmentEntry>[
-        new CircularSegmentEntry(1500.0, Colors.red[200], rankKey: 'Q1'),
-        new CircularSegmentEntry(750.0, Colors.green[200], rankKey: 'Q2'),
-        new CircularSegmentEntry(2000.0, Colors.blue[200], rankKey: 'Q3'),
-        new CircularSegmentEntry(1000.0, Colors.yellow[200], rankKey: 'Q4'),
+        new CircularSegmentEntry(1500.0, Colors.red[200]!, rankKey: 'Q1'),
+        new CircularSegmentEntry(750.0, Colors.green[200]!, rankKey: 'Q2'),
+        new CircularSegmentEntry(2000.0, Colors.blue[200]!, rankKey: 'Q3'),
+        new CircularSegmentEntry(1000.0, Colors.yellow[200]!, rankKey: 'Q4'),
       ],
       rankKey: 'Quarterly Profits',
     ),
@@ -33,10 +33,10 @@ final List<List<CircularStackEntry>> _quarterlyProfitPieData = [
   <CircularStackEntry>[
     new CircularStackEntry(
       <CircularSegmentEntry>[
-        new CircularSegmentEntry(1800.0, Colors.red[200], rankKey: 'Q1'),
-        new CircularSegmentEntry(2900.0, Colors.green[200], rankKey: 'Q2'),
-        new CircularSegmentEntry(4000.0, Colors.blue[200], rankKey: 'Q3'),
-        new CircularSegmentEntry(7000.0, Colors.yellow[200], rankKey: 'Q4'),
+        new CircularSegmentEntry(1800.0, Colors.red[200]!, rankKey: 'Q1'),
+        new CircularSegmentEntry(2900.0, Colors.green[200]!, rankKey: 'Q2'),
+        new CircularSegmentEntry(4000.0, Colors.blue[200]!, rankKey: 'Q3'),
+        new CircularSegmentEntry(7000.0, Colors.yellow[200]!, rankKey: 'Q4'),
       ],
       rankKey: 'Quarterly Profits',
     ),
@@ -59,7 +59,7 @@ class _AnimatedPieChartExampleState extends State<AnimatedPieChartExample> {
     setState(() {
       sampleIndex++;
       List<CircularStackEntry> data = _quarterlyProfitPieData[sampleIndex % 3];
-      _chartKey.currentState.updateData(data);
+      _chartKey.currentState!.updateData(data);
     });
   }
 

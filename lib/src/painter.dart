@@ -10,7 +10,7 @@ class AnimatedCircularChartPainter extends CustomPainter {
       : super(repaint: animation);
 
   final Animation<CircularChart> animation;
-  final TextPainter labelPainter;
+  final TextPainter? labelPainter;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -40,7 +40,7 @@ class CircularChartPainter extends CustomPainter {
 
 const double _kRadiansPerDegree = Math.pi / 180;
 
-void _paintLabel(Canvas canvas, Size size, TextPainter labelPainter) {
+void _paintLabel(Canvas canvas, Size size, TextPainter? labelPainter) {
   if (labelPainter != null) {
     labelPainter.paint(
       canvas,

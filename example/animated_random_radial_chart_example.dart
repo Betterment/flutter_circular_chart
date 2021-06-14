@@ -1,6 +1,7 @@
+import 'dart:math' as Math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_circular_chart/flutter_circular_chart.dart';
-import 'dart:math' as Math;
 
 import 'color_palette.dart';
 
@@ -22,7 +23,7 @@ class _RandomizedRadialChartExampleState
       new GlobalKey<AnimatedCircularChartState>();
   final _chartSize = const Size(300.0, 300.0);
   final Math.Random random = new Math.Random();
-  List<CircularStackEntry> data;
+  late List<CircularStackEntry> data;
 
   @override
   void initState() {
@@ -35,7 +36,7 @@ class _RandomizedRadialChartExampleState
   void _randomize() {
     setState(() {
       data = _generateRandomData();
-      _chartKey.currentState.updateData(data);
+      _chartKey.currentState!.updateData(data);
     });
   }
 
@@ -43,8 +44,8 @@ class _RandomizedRadialChartExampleState
     int stackCount = random.nextInt(10);
     List<CircularStackEntry> data = new List.generate(stackCount, (i) {
       int segCount = random.nextInt(10);
-      List<CircularSegmentEntry> segments =  new List.generate(segCount, (j) {
-        Color randomColor = ColorPalette.primary.random(random);
+      List<CircularSegmentEntry> segments = new List.generate(segCount, (j) {
+        Color randomColor = ColorPalette.primary.random(random) ?? Colors.black;
         return new CircularSegmentEntry(random.nextDouble(), randomColor);
       });
       return new CircularStackEntry(segments);
