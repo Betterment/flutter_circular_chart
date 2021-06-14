@@ -24,14 +24,14 @@ class CircularSegmentEntry {
   final double value;
 
   /// The color drawn in the stack for this segment.
-  final Color color;
+  final Color? color;
 
   /// An optional String key, used when animating charts to preserve semantics when
   /// transitioning between data points.
-  final String rankKey;
+  final String? rankKey;
 
   /// An optional double value to define the ring's stroke width.
-  final double strokeWidth;
+  final double? strokeWidth;
 
   String toString() {
     return '$rankKey: $value $color $strokeWidth';
@@ -53,5 +53,5 @@ class CircularStackEntry {
 
   /// An optional String key, used when animating charts to preserve semantics when
   /// transitioning between data points.
-  final String rankKey;
+  final String? rankKey;
 }

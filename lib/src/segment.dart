@@ -12,9 +12,9 @@ class CircularChartSegment extends MergeTweenable<CircularChartSegment> {
   );
 
   final int rank;
-  final double sweepAngle;
-  final Color color;
-  final double strokeWidth;
+  final double? sweepAngle;
+  final Color? color;
+  final double? strokeWidth;
 
   @override
   CircularChartSegment get empty => CircularChartSegment(
@@ -53,5 +53,5 @@ class CircularChartSegmentTween extends Tween<CircularChartSegment> {
 
   @override
   CircularChartSegment lerp(double t) =>
-      CircularChartSegment.lerp(begin, end, t);
+      CircularChartSegment.lerp(begin!, end!, t);
 }
